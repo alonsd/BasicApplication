@@ -1,4 +1,7 @@
 # BasicApplication
+
+<img src="https://github.com/alonsd/BasicApplication/blob/main/Basic%20Application%20Logo.png" width="300"/> 
+
  No more looking for dependencies, adding permissions, configuring Koin -  this basic Android temple application is using MVVM + Retrofit + Coroutines structure and has eveything you need for a fresh new Android project.  
 
 ### Prerequisites
