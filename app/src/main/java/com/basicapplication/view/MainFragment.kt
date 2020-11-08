@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.basicapplication.R
 import com.basicapplication.databinding.FragmentMainBinding
-import com.basicapplication.utils.network.ResponseHandler
+import com.basicapplication.utils.network.Resource
 import com.basicapplication.view.viewmodel.MainViewModel
 import org.koin.android.ext.android.get
 
@@ -31,17 +31,17 @@ class MainFragment : Fragment() {
     }
 
     private fun init() {
-        mainViewModel.apiInfo.observe(viewLifecycleOwner, { resource ->
+        mainViewModel.apiData.observe(viewLifecycleOwner, { resource ->
 
-            when (resource.status) {
-                ResponseHandler.Resource.Status.SUCCESS -> {
-                    Log.d("ApiResult", resource.data!!.toString())
-                }
-                ResponseHandler.Resource.Status.ERROR -> {
-                    Toast.makeText(requireContext(), resource.message!!, Toast.LENGTH_SHORT).show()
-                }
-                ResponseHandler.Resource.Status.LOADING -> {
+            when (resource) {
+                is Resource.Loading -> {
                     //show loading to UI
+                }
+                is Resource.Completed -> {
+                    Log.d("ApiResult", resource.data.toString())
+                }
+                is Resource.Error -> {
+                    Toast.makeText(requireContext(), resource.throwable.message, Toast.LENGTH_SHORT).show()
                 }
             }
         })

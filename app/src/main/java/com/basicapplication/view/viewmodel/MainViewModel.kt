@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.basicapplication.network.repository.MainRepository
-import com.basicapplication.utils.network.ResponseHandler
+import com.basicapplication.utils.network.Resource
 
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
-    val apiInfo : LiveData<ResponseHandler.Resource<Any>> = liveData {
-        emit(ResponseHandler.Resource.loading(null))
+    val apiData : LiveData<Resource<Any>> = liveData {
+        emit(Resource.Loading())
         emit(mainRepository.getSomethingFromPath())
     }
 }
