@@ -1,2 +1,29 @@
+<img src="https://github.com/alonsd/BasicApplication/blob/main/Basic%20Application%20Logo.png" width="700"/> 
+
 # BasicApplication
- Basic Android temple application using MVVM + Retrofit + Coroutines structure. 
+
+No more looking for dependencies, adding permissions, configuring Koin -  this basic Android temple application has eveything you need for a fresh new Android project - 
+ 
+- [x] Solid MVVM architecture.
+- [x] Network layer built with Retrofit + Coroutines + error handling wrapper with a demonstrated used API in the app.
+- [x] Service Locator using Koin is configured and used throughout the application.
+- [x] Built for a Single-Activity application, Navigation Component is already predefined and a first fragment is already built onto it.
+- [x] Powerful generic Util class for ListAdapter to prevent creating a new DiffUtil.ItemCallback class.
+- [x] Very commonly used dependencies such as Gson, Room, Glide and more are already pre-defined.
+
+### Prerequisites
+This project assumes you know how to work with MVVM architecture, Retrofit networking and Kotlin Coroutines.
+
+If you do, this project can save you ALOT of time when creating a new Android project from scratch - just clone this project, change the package name, project name, generic variables to suit your naming needs and your ready to go. 
+
+### Installing
+
+Clone the project and start renaming everything. Will take approx 5~ minutes and your ready to go. 
+
+## Built With
+
+- Android Studio.
+
+## Authors
+
+* **Alon Shlider** - (https://github.com/alonsd)
