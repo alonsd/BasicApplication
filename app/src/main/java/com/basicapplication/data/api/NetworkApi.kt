@@ -1,4 +1,4 @@
-package com.basicapplication.network.api
+package com.basicapplication.data.api
 
 import retrofit2.http.GET
 

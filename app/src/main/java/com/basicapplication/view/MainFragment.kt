@@ -37,10 +37,10 @@ class MainFragment : Fragment() {
                 is Resource.Loading -> {
                     //show loading to UI
                 }
-                is Resource.Completed -> {
+                is Resource.Success -> {
                     Log.d("ApiResult", resource.data.toString())
                 }
-                is Resource.Error -> {
+                is Resource.Exception -> {
                     Toast.makeText(requireContext(), resource.throwable.message, Toast.LENGTH_SHORT).show()
                 }
             }

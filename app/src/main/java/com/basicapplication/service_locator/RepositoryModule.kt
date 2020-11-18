@@ -1,6 +1,6 @@
 package com.basicapplication.service_locator
 
-import com.basicapplication.network.repository.MainRepository
+import com.basicapplication.data.repository.MainRepository
 import org.koin.dsl.module
 
 

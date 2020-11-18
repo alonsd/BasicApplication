@@ -1,6 +1,6 @@
 package com.basicapplication.service_locator
 
-import com.basicapplication.network.api.NetworkApi
+import com.basicapplication.data.api.NetworkApi
 import com.basicapplication.utils.Constants.Api.BASE_URL
 import org.koin.dsl.module
 import retrofit2.Retrofit

@@ -2,6 +2,7 @@ package com.basicapplication.utils
 
 import android.app.Application
 import android.content.Context
+import com.basicapplication.service_locator.dataModule
 import com.basicapplication.service_locator.networkModule
 import com.basicapplication.service_locator.repositoryModule
 import com.basicapplication.service_locator.viewModelModule
@@ -25,7 +26,7 @@ class App : Application() {
         startKoin {
             androidContext(this@App)
             androidLogger()
-            modules(networkModule, repositoryModule, viewModelModule)
+            modules(networkModule, repositoryModule, viewModelModule, dataModule)
         }
     }
 }
