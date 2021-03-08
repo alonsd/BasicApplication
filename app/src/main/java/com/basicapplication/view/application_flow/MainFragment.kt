@@ -1,4 +1,4 @@
-package com.basicapplication.view
+package com.basicapplication.view.application_flow
 
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.basicapplication.R
 import com.basicapplication.databinding.FragmentMainBinding
 import com.basicapplication.utils.network.Resource
-import com.basicapplication.view.viewmodel.MainViewModel
+import com.basicapplication.data.viewmodel.MainViewModel
 import org.koin.android.ext.android.get
 
 class MainFragment : Fragment() {
@@ -19,7 +19,7 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private val mainViewModel = get<MainViewModel>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
         return binding.root
     }
@@ -41,7 +41,8 @@ class MainFragment : Fragment() {
                     Log.d("ApiResult", resource.data.toString())
                 }
                 is Resource.Exception -> {
-                    Toast.makeText(requireContext(), resource.throwable.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), resource.throwable.message, Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
         })

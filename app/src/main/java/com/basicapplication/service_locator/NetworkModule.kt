@@ -11,6 +11,10 @@ val networkModule = module {
     single { provideApi(get()) }
 }
 
-private fun provideRetrofit() = Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
+private fun provideRetrofit() =
+    Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
 
 private fun provideApi(retrofit: Retrofit): NetworkApi = retrofit.create(NetworkApi::class.java)
