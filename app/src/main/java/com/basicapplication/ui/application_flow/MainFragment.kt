@@ -1,4 +1,4 @@
-package com.basicapplication.view.application_flow
+package com.basicapplication.ui.application_flow
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.basicapplication.R
 import com.basicapplication.databinding.FragmentMainBinding
-import com.basicapplication.utils.network.Resource
+import com.basicapplication.utils.data.Resource
 import com.basicapplication.data.viewmodel.MainViewModel
 import org.koin.android.ext.android.get
 

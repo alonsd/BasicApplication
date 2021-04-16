@@ -1,7 +1,7 @@
 package com.basicapplication.data.source
 
 import com.basicapplication.data.api.NetworkApi
-import com.basicapplication.utils.network.Resource
+import com.basicapplication.utils.data.Resource
 import retrofit2.HttpException
 import java.lang.Exception
 

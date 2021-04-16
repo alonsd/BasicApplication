@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.basicapplication.data.repository.MainRepository
-import com.basicapplication.utils.network.Resource
+import com.basicapplication.utils.data.Resource
 
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 

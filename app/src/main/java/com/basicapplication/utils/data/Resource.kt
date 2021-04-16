@@ -1,4 +1,4 @@
-package com.basicapplication.utils.network
+package com.basicapplication.utils.data
 
 
 /**

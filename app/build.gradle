@@ -35,9 +35,36 @@ android {
     }
 
     buildTypes {
-        release {
-            minifyEnabled true
+
+        Developer {
+            minifyEnabled false
+            debuggable true
+            buildConfigField 'String', 'BASE_URL','"https://pastebin.com/"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        Stage_QA {
+            minifyEnabled false
+            debuggable true
+            buildConfigField 'String', 'BASE_URL','"https://pastebin.com/"'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        Production {
+            minifyEnabled false
+            debuggable true
+            buildConfigField 'String', 'BASE_URL','"https://pastebin.com/"'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    //We don't want to use the default build variants so we ignore them.
+    variantFilter { variant ->
+        if(variant.buildType.name == 'debug' || variant.buildType.name == 'release') {
+            variant.setIgnore(true)
         }
     }
 }
@@ -49,7 +76,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+    implementation 'com.google.firebase:firebase-messaging:21.1.0'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -58,26 +85,28 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.10'
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
     kapt "com.android.databinding:compiler:3.1.4"
 
+    //Ok Http Logging
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     // Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.3"
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.3"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
 
     //ViewPager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     //Material
-    implementation 'com.google.android.material:material:1.4.0-alpha01'
+    implementation 'com.google.android.material:material:1.4.0-alpha02'
 
     //CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //Fragment
-    implementation "androidx.fragment:fragment-ktx:1.3.0"
+    implementation "androidx.fragment:fragment-ktx:1.3.2"
 
     //Room components
     implementation 'androidx.room:room-runtime:2.2.6'
@@ -88,11 +117,11 @@ dependencies {
 
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
 
     //Lifecycle components
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-common-java8:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.3.1'
 
     //Gson
     implementation 'com.google.code.gson:gson:2.8.6'

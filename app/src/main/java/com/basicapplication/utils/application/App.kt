@@ -1,4 +1,4 @@
-package com.basicapplication.utils
+package com.basicapplication.utils.application
 
 import android.app.Application
 import android.content.Context
@@ -13,12 +13,19 @@ import org.koin.core.context.startKoin
 class App : Application() {
 
     companion object {
-        var context: Context? = null
+        private var instance: App? = null
+
+        fun applicationContext() : Context {
+            return instance!!.applicationContext
+        }
+    }
+
+    init {
+        instance = this
     }
 
     override fun onCreate() {
         super.onCreate()
-        context = applicationContext
         setupKoin()
     }
 

@@ -5,14 +5,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".utils.App"
+        android:name=".utils.application.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.BasicApplication">
-        <activity android:name=".view.activity.ApplicationActivity">
+        <activity android:name=".ui.activity.ApplicationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
