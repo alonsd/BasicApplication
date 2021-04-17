@@ -9,7 +9,7 @@ No more looking for dependencies, adding permissions, configuring Koin -  this b
 - [x] Local database using Room library implemented and ready to use.
 - [x] Service Locator using Koin is configured and used throughout the application.
 - [x] Built for a Single-Activity application, Navigation Component is already predefined and a first fragment is already built onto it.
-- [x] Powerful generic Util class for ListAdapter to prevent creating a new DiffUtil.ItemCallback class.
+- [x] Powerful generic utility class for ListAdapter to prevent creating a new DiffUtil.ItemCallback class each time you create a new list.
 - [x] SharedPreferences extension which makes saving small amounts of data extremely easy to use. 
 - [x] Very commonly used dependencies such as Gson, Room, Glide and more are already pre-defined.
 
