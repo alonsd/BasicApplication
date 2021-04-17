@@ -31,12 +31,9 @@ class MainFragment : Fragment() {
     }
 
     private fun init() {
-        mainViewModel.apiData.observe(viewLifecycleOwner, { resource ->
+        mainViewModel.getData().observe(viewLifecycleOwner, { resource ->
 
             when (resource) {
-                is Resource.Loading -> {
-                    //show loading to UI
-                }
                 is Resource.Success -> {
                     Log.d("ApiResult", resource.data.toString())
                 }

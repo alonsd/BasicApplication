@@ -2,10 +2,7 @@ package com.basicapplication.utils.application
 
 import android.app.Application
 import android.content.Context
-import com.basicapplication.service_locator.dataModule
-import com.basicapplication.service_locator.networkModule
-import com.basicapplication.service_locator.repositoryModule
-import com.basicapplication.service_locator.viewModelModule
+import com.basicapplication.service_locator.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -22,6 +19,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         setupKoin()
     }
 
@@ -29,7 +27,7 @@ class App : Application() {
         startKoin {
             androidContext(this@App)
             androidLogger()
-            modules(networkModule, repositoryModule, viewModelModule, dataModule)
+            modules(remoteDataSourceModule, localDataSourceModule, repositoryModule, viewModelModule, )
         }
     }
 }

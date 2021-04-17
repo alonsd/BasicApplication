@@ -1,15 +1,14 @@
 package com.basicapplication.data.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.basicapplication.data.repository.MainRepository
-import com.basicapplication.utils.data.Resource
+import kotlinx.coroutines.Dispatchers
 
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
-    val apiData : LiveData<Resource<Any>> = liveData {
-        emit(Resource.Loading())
+    fun getData() = liveData(Dispatchers.IO) {
+//        emit(mainRepository.getDataFromLocal())
         emit(mainRepository.getDataFromApi())
     }
 }
