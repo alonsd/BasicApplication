@@ -16,7 +16,7 @@ class MainRepository(
                 Log.d("getDataFromApi", dataFromPath.body.toString())
             }
             is NetworkResponse.ServerError -> {
-                Log.d("getDataFromApi", dataFromPath.body.toString())
+                Log.d("getDataFromApi", dataFromPath.body?.message.toString())
             }
             is NetworkResponse.NetworkError -> {
                 Log.d("getDataFromApi", dataFromPath.error.message.toString())
