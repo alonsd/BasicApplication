@@ -1,17 +1,14 @@
 package com.basicapplication.ui.application_flow
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.basicapplication.R
-import com.basicapplication.databinding.FragmentMainBinding
-import com.basicapplication.utils.data.Resource
 import com.basicapplication.data.viewmodel.MainViewModel
+import com.basicapplication.databinding.FragmentMainBinding
 import org.koin.android.ext.android.get
 
 class MainFragment : Fragment() {
@@ -30,18 +27,10 @@ class MainFragment : Fragment() {
         init()
     }
 
-    private fun init() {
-        mainViewModel.getData().observe(viewLifecycleOwner, { resource ->
+    private fun init() = mainViewModel.getData()
 
-            when (resource) {
-                is Resource.Success -> {
-                    Log.d("ApiResult", resource.data.toString())
-                }
-                is Resource.Exception -> {
-                    Toast.makeText(requireContext(), resource.throwable.message, Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-        })
-    }
+
+
+
+
 }

@@ -3,6 +3,7 @@ package com.basicapplication.service_locator
 import com.basicapplication.BuildConfig
 import com.basicapplication.data.source.remote.api.NetworkApi
 import com.basicapplication.data.source.remote.source.RemoteDataSource
+import com.haroldadmin.cnradapter.NetworkResponseAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -19,6 +20,7 @@ private fun provideRetrofit() =
     Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(NetworkResponseAdapterFactory())
         .client(provideOkHttpClient())
         .build()
 
