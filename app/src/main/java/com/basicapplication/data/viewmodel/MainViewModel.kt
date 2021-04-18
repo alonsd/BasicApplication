@@ -3,7 +3,8 @@ package com.basicapplication.data.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.basicapplication.data.repository.MainRepository
-import com.basicapplication.model.ServerErrorResponse
+import com.basicapplication.model.models.BasicApplicationModel
+import com.basicapplication.model.models.ServerErrorResponseModel
 import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,7 +18,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         getMainFragmentData { mainRepository.getDataFromApi() }
     }
 
-    private fun <T : Any> getMainFragmentData(predicate: suspend () -> NetworkResponse<T, ServerErrorResponse>) =
+    private fun <T : Any> getMainFragmentData(predicate: suspend () -> NetworkResponse<T, ServerErrorResponseModel>) =
         viewModelScope.launch(Dispatchers.IO) {
             when (val response = predicate()) {
                 is NetworkResponse.Success -> { sortData(response) }
@@ -29,18 +30,14 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
     private fun <T : Any> sortData(response: NetworkResponse.Success<T>) {
         when (val data = response.body) {
-            is String -> {
+            is BasicApplicationModel -> {
                 dataFlow.value = MainFragmentActions.ShowDataTypeOne(data)
-            }
-            is Int -> {
-                dataFlow.value = MainFragmentActions.ShowDataTypeTwo(data)
             }
         }
     }
 
     sealed class MainFragmentActions {
-        data class ShowDataTypeOne(val data: String) : MainFragmentActions()
-        data class ShowDataTypeTwo(val data: Int) : MainFragmentActions()
+        data class ShowDataTypeOne(val data: BasicApplicationModel) : MainFragmentActions()
         data class ShowError(val errorMessage: String) : MainFragmentActions()
         object EmptyValue : MainFragmentActions()
     }

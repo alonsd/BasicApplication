@@ -36,7 +36,7 @@ class MainFragment : Fragment() {
         mainViewModel.dataFlow.collect { action ->
             when (action) {
                 is MainViewModel.MainFragmentActions.ShowDataTypeOne -> {
-                    Toast.makeText(requireContext(), action.data, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), action.data.toString(), Toast.LENGTH_LONG).show()
                 }
                 is MainViewModel.MainFragmentActions.ShowError -> {
                     Toast.makeText(requireContext(), action.errorMessage, Toast.LENGTH_LONG).show()

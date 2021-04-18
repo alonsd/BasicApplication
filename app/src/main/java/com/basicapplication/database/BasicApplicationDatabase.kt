@@ -6,12 +6,12 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.basicapplication.data.source.local.dao.BasicApplicationDao
 import com.basicapplication.database.converter.BasicApplicationConverter
-import com.basicapplication.model.BasicApplicationModel
+import com.basicapplication.model.entities.BasicApplicationEntity
 import com.basicapplication.utils.application.App
 import com.basicapplication.utils.constants.Database.BASIC_APPLICATION_DATABASE
 
 
-@Database(entities = [BasicApplicationModel::class], version = 1, exportSchema = false)
+@Database(entities = [BasicApplicationEntity::class], version = 1, exportSchema = false)
 @TypeConverters(BasicApplicationConverter::class)
 abstract class BasicApplicationDatabase : RoomDatabase() {
 

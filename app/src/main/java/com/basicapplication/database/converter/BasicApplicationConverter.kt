@@ -1,17 +1,17 @@
 package com.basicapplication.database.converter
 
 import androidx.room.TypeConverter
-import com.basicapplication.model.BasicApplicationModel
+import com.basicapplication.model.entities.BasicApplicationEntity
 
 class BasicApplicationConverter {
 
     @TypeConverter
-    fun basicApplicationModelToString(model: BasicApplicationModel): String {
-        return model.name
+    fun basicApplicationModelToString(entity: BasicApplicationEntity): String {
+        return entity.name
     }
 
     @TypeConverter
-    fun stringToBasicApplicationModel(string: String): BasicApplicationModel {
-        return BasicApplicationModel(string)
+    fun stringToBasicApplicationModel(string: String): BasicApplicationEntity {
+        return BasicApplicationEntity(string)
     }
 }
