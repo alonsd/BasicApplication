@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.basicapplication.R
 import com.basicapplication.data.viewmodel.MainViewModel
 import com.basicapplication.databinding.FragmentMainBinding
+import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.get
 
 class MainFragment : Fragment() {
@@ -25,12 +28,25 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         init()
+        sortData()
+    }
+
+    private fun sortData() = lifecycleScope.launchWhenStarted {
+
+        mainViewModel.dataFlow.collect { action ->
+            when (action) {
+                is MainViewModel.MainFragmentActions.ShowData -> {
+                    Toast.makeText(requireContext(), action.data.toString(), Toast.LENGTH_LONG).show()
+                }
+                is MainViewModel.MainFragmentActions.ShowError -> {
+                    Toast.makeText(requireContext(), action.errorMessage, Toast.LENGTH_LONG).show()
+                }
+                else -> return@collect
+            }
+        }
     }
 
     private fun init() = mainViewModel.getData()
-
-
-
 
 
 }
