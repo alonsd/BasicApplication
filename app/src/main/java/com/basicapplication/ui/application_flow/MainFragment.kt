@@ -35,8 +35,8 @@ class MainFragment : Fragment() {
 
         mainViewModel.dataFlow.collect { action ->
             when (action) {
-                is MainViewModel.MainFragmentActions.ShowData -> {
-                    Toast.makeText(requireContext(), action.data.toString(), Toast.LENGTH_LONG).show()
+                is MainViewModel.MainFragmentActions.ShowDataTypeOne -> {
+                    Toast.makeText(requireContext(), action.data, Toast.LENGTH_LONG).show()
                 }
                 is MainViewModel.MainFragmentActions.ShowError -> {
                     Toast.makeText(requireContext(), action.errorMessage, Toast.LENGTH_LONG).show()
@@ -46,7 +46,7 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun init() = mainViewModel.getData()
+    private fun init() = mainViewModel.getBasicApplicationDataTypeOne()
 
 
 }
