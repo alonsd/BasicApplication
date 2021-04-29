@@ -28,17 +28,18 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         init()
-        sortData()
+        handleData()
     }
 
-    private fun sortData() = lifecycleScope.launchWhenStarted {
+
+    private fun handleData() = lifecycleScope.launchWhenStarted {
 
         mainViewModel.dataFlow.collect { action ->
             when (action) {
                 is MainViewModel.MainFragmentActions.ShowDataTypeOne -> {
-                    Toast.makeText(requireContext(), action.data.toString(), Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), action.modelsList.toString(), Toast.LENGTH_LONG).show()
                 }
-                is MainViewModel.MainFragmentActions.ShowError -> {
+                is MainViewModel.MainFragmentActions.ShowGeneralError -> {
                     Toast.makeText(requireContext(), action.errorMessage, Toast.LENGTH_LONG).show()
                 }
                 else -> return@collect

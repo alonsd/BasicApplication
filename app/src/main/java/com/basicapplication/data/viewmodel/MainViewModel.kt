@@ -4,55 +4,45 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.basicapplication.data.repository.MainRepository
 import com.basicapplication.model.models.BasicApplicationModel
-import com.basicapplication.model.models.ServerErrorResponseModel
 import com.haroldadmin.cnradapter.NetworkResponse
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
-    val dataFlow = MutableStateFlow<MainFragmentActions>(MainFragmentActions.EmptyValue)
+    private val mutableDataFlow = MutableStateFlow<MainFragmentActions>(MainFragmentActions.EmptyValue)
+    val dataFlow = mutableDataFlow.asStateFlow()
 
     fun getBasicApplicationDataTypeOne() = viewModelScope.launch {
-        getMainFragmentData() { mainRepository.getDataFromApi() }
-    }
-
-    private fun <T : Any> getMainFragmentData(predicate: suspend () -> NetworkResponse<T, ServerErrorResponseModel>) =
-        viewModelScope.launch(Dispatchers.IO) {
-            when (val response = predicate()) {
-                is NetworkResponse.Success -> { sortData(response) }
-                is NetworkResponse.ServerError -> dataFlow.value = MainFragmentActions.ShowError(response.body?.message!!)
-                is NetworkResponse.NetworkError -> dataFlow.value = MainFragmentActions.ShowError(response.error.message!!)
-                is NetworkResponse.UnknownError -> dataFlow.value = MainFragmentActions.ShowError(response.error.message!!)
+        when (val response = mainRepository.getDataFromApi()) {
+            is NetworkResponse.Success -> {
+                mutableDataFlow.emit(MainFragmentActions.ShowDataTypeOne(response.body.numbers))
             }
-        }
-
-    private fun <T : Any, K: Any> getMainFragmentData(
-        scope : CoroutineScope,
-        flow : MutableStateFlow<T>,
-        predicate: suspend () -> NetworkResponse<K, ServerErrorResponseModel>) =
-        scope.launch(Dispatchers.IO) {
-            when (val response = predicate()) {
-                is NetworkResponse.Success -> { sortData(response) }
-//                is NetworkResponse.ServerError -> flow.value = MainFragmentActions.ShowError(response.body?.message!!)
-//                is NetworkResponse.NetworkError -> flow.value = MainFragmentActions.ShowError(response.error.message!!)
-//                is NetworkResponse.UnknownError -> flow.value = MainFragmentActions.ShowError(response.error.message!!)
+            is NetworkResponse.ServerError -> {
+               response.body?.let { errorModel ->
+                   mutableDataFlow.emit(MainFragmentActions.ShowGeneralError(errorModel.message))
+               }
             }
-        }
-
-    private fun <T : Any> sortData(response: NetworkResponse.Success<T>) {
-        when (val data = response.body) {
-            is BasicApplicationModel -> {
-                dataFlow.value = MainFragmentActions.ShowDataTypeOne(data)
+            is NetworkResponse.NetworkError-> {
+                response.error.message?.let { exceptionMessage ->
+                    mutableDataFlow.emit(MainFragmentActions.ShowGeneralError(exceptionMessage))
+                }
+            }
+            is NetworkResponse.UnknownError -> {
+                response.error.message?.let { exceptionMessage ->
+                    mutableDataFlow.emit(MainFragmentActions.ShowGeneralError(exceptionMessage))
+                }
             }
         }
     }
+
 
     sealed class MainFragmentActions {
-        data class ShowDataTypeOne(val data: BasicApplicationModel) : MainFragmentActions()
-        data class ShowError(val errorMessage: String) : MainFragmentActions()
+        data class ShowDataTypeOne(val modelsList: List<BasicApplicationModel.Number>) : MainFragmentActions()
+        data class ShowGeneralError(val errorMessage: String) : MainFragmentActions()
         object EmptyValue : MainFragmentActions()
     }
 }
