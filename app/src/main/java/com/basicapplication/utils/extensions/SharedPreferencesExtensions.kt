@@ -15,7 +15,7 @@ val Activity.sharedPreferences: SharedPreferences
     get() =
         getSharedPreferences(BASIC_APPLICATIONS_SHARED_PREFERENCES, MODE_PRIVATE)
 
-private inline fun SharedPreferences.editSharedPreferences(operation: (SharedPreferences.Editor) -> Unit) {
+private fun SharedPreferences.editSharedPreferences(operation: (SharedPreferences.Editor) -> Unit) {
     val editSharePreferences = edit()
     operation(editSharePreferences)
     editSharePreferences.apply()
