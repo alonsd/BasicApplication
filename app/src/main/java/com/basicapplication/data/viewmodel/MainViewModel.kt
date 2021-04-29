@@ -21,19 +21,10 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
             is NetworkResponse.Success -> {
                 mutableDataFlow.emit(MainFragmentActions.ShowDataTypeOne(response.body.numbers))
             }
-            is NetworkResponse.ServerError -> {
-               response.body?.let { errorModel ->
-                   mutableDataFlow.emit(MainFragmentActions.ShowGeneralError(errorModel.message))
-               }
-            }
-            is NetworkResponse.NetworkError-> {
-                response.error.message?.let { exceptionMessage ->
-                    mutableDataFlow.emit(MainFragmentActions.ShowGeneralError(exceptionMessage))
-                }
-            }
-            is NetworkResponse.UnknownError -> {
-                response.error.message?.let { exceptionMessage ->
-                    mutableDataFlow.emit(MainFragmentActions.ShowGeneralError(exceptionMessage))
+
+            is NetworkResponse.Error -> {
+                response.error.message?.let { message ->
+                    mutableDataFlow.emit(MainFragmentActions.ShowGeneralError(message))
                 }
             }
         }

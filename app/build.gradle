@@ -93,7 +93,10 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
     //NetworkResponseAdapter
-    implementation "com.github.haroldadmin:NetworkResponseAdapter:4.1.0"
+    // DON'T UPGRADE THIS DEPENDENCY - WE USE A SPECIFIC PRE-RELEASE VERSION FOR IT'S NEW FEATURES.
+    // UPGRADE ONLY WHEN VERSION 4.2.0 OR ABOVE IS AVAILABLE.
+    implementation 'com.github.haroldadmin:NetworkResponseAdapter:d9912f3dfe'
+
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
