@@ -67,6 +67,13 @@ android {
             variant.setIgnore(true)
         }
     }
+
+    //When building a new version it will automatically include the build type in the name
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.name}-${variant.versionName}.apk"
+        }
+    }
 }
 
 dependencies {
@@ -117,8 +124,8 @@ dependencies {
     //Room components
     implementation 'androidx.room:room-runtime:2.3.0'
     implementation 'androidx.room:room-ktx:2.3.0'
-    kapt 'androidx.room:room-compiler:2.3.0'
-    kapt "android.arch.persistence.room:compiler:2.2.5"
+//    kapt 'androidx.room:room-compiler:2.3.0'
+//    kapt "android.arch.persistence.room:compiler:2.2.5"
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 
     //Coroutines
