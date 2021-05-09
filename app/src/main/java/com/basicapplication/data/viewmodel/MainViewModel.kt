@@ -30,7 +30,6 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         }
     }
 
-
     sealed class MainFragmentActions {
         data class ShowDataTypeOne(val modelsList: List<BasicApplicationModel.Number>) : MainFragmentActions()
         data class ShowGeneralError(val errorMessage: String) : MainFragmentActions()

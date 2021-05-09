@@ -31,6 +31,7 @@ class MainFragment : Fragment() {
         handleData()
     }
 
+    private fun init() = mainViewModel.getBasicApplicationDataTypeOne()
 
     private fun handleData() = lifecycleScope.launchWhenStarted {
 
@@ -46,8 +47,5 @@ class MainFragment : Fragment() {
             }
         }
     }
-
-    private fun init() = mainViewModel.getBasicApplicationDataTypeOne()
-
 
 }
