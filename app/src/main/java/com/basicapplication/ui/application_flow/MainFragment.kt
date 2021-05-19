@@ -37,10 +37,10 @@ class MainFragment : Fragment() {
 
         mainViewModel.dataFlow.collect { action ->
             when (action) {
-                is MainViewModel.MainFragmentActions.ShowDataTypeOne -> {
+                is MainViewModel.MainViewModelActions.ShowDataTypeOne -> {
                     Toast.makeText(requireContext(), action.modelsList.toString(), Toast.LENGTH_LONG).show()
                 }
-                is MainViewModel.MainFragmentActions.ShowGeneralError -> {
+                is MainViewModel.MainViewModelActions.ShowGeneralError -> {
                     Toast.makeText(requireContext(), action.errorMessage, Toast.LENGTH_LONG).show()
                 }
                 else -> return@collect
