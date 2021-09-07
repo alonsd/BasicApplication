@@ -1,6 +1,7 @@
 package com.basicapplication.data.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.basicapplication.data.repository.MainRepository
 import com.basicapplication.model.models.BasicApplicationModel
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
     private val mutableDataFlow = MutableStateFlow<MainViewModelActions>(MainViewModelActions.EmptyValue)
-    val dataFlow = mutableDataFlow.asStateFlow()
+    val actions = mutableDataFlow.asLiveData()
 
     fun getBasicApplicationDataTypeOne() = viewModelScope.launch(Dispatchers.IO) {
         when (val response = mainRepository.getDataFromApi()) {

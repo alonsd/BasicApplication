@@ -26,7 +26,7 @@ class App : Application() {
     private fun setupKoin() {
         startKoin {
             androidContext(this@App)
-            androidLogger()
+//            androidLogger() //Causes bugs with Kotlin 1.5 - check in the future if problem was fixed
             modules(remoteDataSourceModule, localDataSourceModule, repositoryModule, viewModelModule, )
         }
     }

@@ -33,9 +33,9 @@ class MainFragment : Fragment() {
 
     private fun init() = mainViewModel.getBasicApplicationDataTypeOne()
 
-    private fun handleData() = lifecycleScope.launchWhenStarted {
+    private fun handleData()  {
 
-        mainViewModel.dataFlow.collect { action ->
+        mainViewModel.actions.observe(viewLifecycleOwner) { action ->
             when (action) {
                 is MainViewModel.MainViewModelActions.ShowDataTypeOne -> {
                     Toast.makeText(requireContext(), action.modelsList.toString(), Toast.LENGTH_LONG).show()
@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
                 is MainViewModel.MainViewModelActions.ShowGeneralError -> {
                     Toast.makeText(requireContext(), action.errorMessage, Toast.LENGTH_LONG).show()
                 }
-                else -> return@collect
+                else -> return@observe
             }
         }
     }
