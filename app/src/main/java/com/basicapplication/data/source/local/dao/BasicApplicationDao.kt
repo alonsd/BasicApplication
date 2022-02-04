@@ -9,6 +9,6 @@ import com.basicapplication.utils.constants.Database.BASIC_APPLICATION_TABLE
 @Dao
 interface BasicApplicationDao {
 
-    @Query("select * from $BASIC_APPLICATION_TABLE")
+    @Query("select * from BasicApplicationTable")
     suspend fun getBasicApplicationModel() : BasicApplicationEntity
 }
