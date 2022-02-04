@@ -18,10 +18,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = '1.8'
     }
+
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.2.0-alpha02"
@@ -35,6 +35,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -70,6 +73,11 @@ android {
             variant.setIgnore(true)
         }
     }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
 
     //When building a new version it will automatically include the build type in the name
     android.applicationVariants.all { variant ->
@@ -92,6 +100,8 @@ dependencies {
     implementation 'androidx.compose.animation:animation:1.0.5'
     implementation 'androidx.compose.ui:ui-tooling:1.0.5'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0-alpha01'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.5'
 
     //Testing

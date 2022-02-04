@@ -12,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.BasicApplication">
-        <activity android:name=".ui.activity.ApplicationActivity"
+        <activity
+            android:name=".ui.application_flow.ComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose"
+            android:theme="@style/Theme.BasicApplication" />
+        <activity
+            android:name=".ui.activity.ApplicationActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
