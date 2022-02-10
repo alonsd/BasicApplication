@@ -1,4 +1,4 @@
-package com.basicapplication.ui.application_flow.ui.theme
+package com.basicapplication.ui.compose.theme
 
 import androidx.compose.ui.graphics.Color
 

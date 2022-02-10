@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.basicapplication.R
 import com.basicapplication.data.viewmodel.MainViewModel
 import com.basicapplication.databinding.FragmentMainBinding
-import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.get
 
 class MainFragment : Fragment() {

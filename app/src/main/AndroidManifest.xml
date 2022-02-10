@@ -13,7 +13,7 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.BasicApplication">
         <activity
-            android:name=".ui.application_flow.ComposeActivity"
+            android:name=".ui.compose.ComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_compose"
             android:theme="@style/Theme.BasicApplication" />

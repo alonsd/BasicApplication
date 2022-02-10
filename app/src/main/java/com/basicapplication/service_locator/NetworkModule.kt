@@ -10,8 +10,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-val remoteDataSourceModule = module {
-    single { RemoteDataSource(get()) }
+val networkModule = module {
     single { provideRetrofit() }
     single { provideApi(get()) }
 }
