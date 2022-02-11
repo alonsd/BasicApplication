@@ -133,7 +133,6 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     //Material
-    //CAUSES COMPILE ERROR WITH VERSION "1.5.0-alpha03" - don't upgrade to that version!
     implementation 'com.google.android.material:material:1.6.0-alpha02'
 
     //Fragment
@@ -165,7 +164,7 @@ dependencies {
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    //Dependency Injection(Service Locator) - Koin
+    //Dependency Injection - Koin
     implementation 'org.koin:koin-core:2.2.2'
     implementation "org.koin:koin-android-scope:2.2.2"
     implementation "org.koin:koin-android-viewmodel:2.2.2"
