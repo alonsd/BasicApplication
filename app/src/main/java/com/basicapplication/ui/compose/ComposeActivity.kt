@@ -11,5 +11,6 @@ class ComposeActivity : ComponentActivity() {
         setContent {
             BasicApplicationApp()
         }
+
     }
 }
