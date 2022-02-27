@@ -16,6 +16,8 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
     private val mutableDataFlow = MutableStateFlow<MainViewModelActions>(MainViewModelActions.EmptyValue)
     val actions = mutableDataFlow.asLiveData()
 
+
+
     fun getBasicApplicationDataTypeOne() = viewModelScope.launch(Dispatchers.IO) {
         when (val response = mainRepository.getDataFromApi()) {
             is NetworkResponse.Success -> {
@@ -27,6 +29,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
                     mutableDataFlow.emit(MainViewModelActions.ShowGeneralError(message))
                 }
             }
+            else -> {}
         }
     }
 

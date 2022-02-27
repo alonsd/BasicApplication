@@ -1,6 +1,7 @@
 package com.basicapplication.ui.application_flow
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,11 +28,41 @@ class MainFragment : Fragment() {
 
         init()
         handleData()
+        Log.d("MainFragment", "onViewCreated: ${LogicTest.twoSum(intArrayOf(11, 15, 2, 7), 9)}")
     }
+
+
+    fun twoSum2(nums: IntArray, target: Int): IntArray? {
+        for (i in nums.indices) {
+            for (j in i + 1 until nums.size) {
+                if (nums[j] == target - nums[i]) {
+                    return intArrayOf(i, j)
+                }
+            }
+        }
+        // In case there is no solution, we'll just return null
+        return null
+    }
+
+    fun twoSum3(nums: IntArray, target: Int): IntArray? {
+        val map: MutableMap<Int, Int> = HashMap()
+        for (i in nums.indices) {
+            map[nums[i]] = i
+        }
+        for (i in nums.indices) {
+            val complement = target - nums[i]
+            if (map.containsKey(complement) && map[complement] != i) {
+                return intArrayOf(i, map[complement]!!)
+            }
+        }
+        // In case there is no solution, we'll just return null
+        return null
+    }
+
 
     private fun init() = mainViewModel.getBasicApplicationDataTypeOne()
 
-    private fun handleData()  {
+    private fun handleData() {
 
         mainViewModel.actions.observe(viewLifecycleOwner) { action ->
             when (action) {
