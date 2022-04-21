@@ -20,6 +20,18 @@ class NetworkService: ObservableObject {
     
     var cancelablle : AnyCancellable?
     
+    func fetchCoinsAsString() -> AnyPublisher<Any, Error> {
+        return URLSession.shared.dataTaskPublisher(for: urlComponents.url!)
+            .tryMap { dataTaskPublisher -> String in
+                guard let string = String(data: dataTaskPublisher.data, encoding: .utf8) else {
+                    throw URLError(.badServerResponse)
+                }
+                return string
+            }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
     func fetchCoins() -> AnyPublisher<Any, Error> {
         return URLSession.shared.dataTaskPublisher(for: urlComponents.url!)
             .tryMap { dataTaskPublisher -> String in
@@ -28,6 +40,7 @@ class NetworkService: ObservableObject {
                 }
                 return string
             }
+//            .decode(type: [Coin].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }

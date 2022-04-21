@@ -9,11 +9,13 @@ import SwiftUI
 
 struct CoinsView: View {
     
-    private let coinsViewModel = CoinViewModel()
+    @ObservedObject private var coinsViewModel = CoinViewModel()
     
     var body: some View {
-        Text("CoinsView").onAppear {
-            self.coinsViewModel.fetchCoins()
+        List(coinsViewModel.coins, id: \.self) { coin in
+            Text(coin.name + " - " + coin.email)
+        }.onAppear{
+            coinsViewModel.fetchCoins()
         }
     }
     
