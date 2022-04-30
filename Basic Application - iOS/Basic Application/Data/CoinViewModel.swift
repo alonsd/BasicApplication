@@ -12,7 +12,8 @@ class CoinViewModel: ObservableObject {
     
     private let networkService = NetworkService()
     
-    @Published var coins = [Coin]()
+//    @Published var coins = [Coin]()
+    @Published var coins = String()
     
     var cancellable : AnyCancellable?
     
@@ -22,11 +23,10 @@ class CoinViewModel: ObservableObject {
     
     func fetchCoins() {
         print("bla bla")
-        cancellable = networkService.fetchCoins().sink(receiveCompletion: { _ in
+        cancellable = networkService.fetchCoinsAsString().sink(receiveCompletion: { _ in
             print("inside completion")
         }, receiveValue: { coinsResult in
-            print("inside receiveValue ")
-            self.coins = (coinsResult as AnyObject).decode
+            self.coins = coinsResult
         })
     }
 }

@@ -12,8 +12,8 @@ struct CoinsView: View {
     @ObservedObject private var coinsViewModel = CoinViewModel()
     
     var body: some View {
-        List(coinsViewModel.coins, id: \.self) { coin in
-            Text(coin.name + " - " + coin.email)
+        NavigationView {
+            Text(coinsViewModel.coins)
         }.onAppear{
             coinsViewModel.fetchCoins()
         }

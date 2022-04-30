@@ -20,7 +20,7 @@ class NetworkService: ObservableObject {
     
     var cancelablle : AnyCancellable?
     
-    func fetchCoinsAsString() -> AnyPublisher<Any, Error> {
+    func fetchCoinsAsString() -> AnyPublisher<String, Error> {
         return URLSession.shared.dataTaskPublisher(for: urlComponents.url!)
             .tryMap { dataTaskPublisher -> String in
                 guard let string = String(data: dataTaskPublisher.data, encoding: .utf8) else {
