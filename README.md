@@ -1,8 +1,8 @@
 <img src="https://github.com/alonsd/BasicApplication/blob/main/Basic%20Application%20Logo.jpeg" width="800"/> 
 
-# BasicApplication - Native Android in Kotlin and iOS in Swift! 
+# BasicApplication - Native Mobile Application Architecture
 
-No more looking for dependencies, adding permissions, configuring DI -  this basic Android temple application has eveything you need for a fresh new mobile project. 
+Devekipoed in Kotlin for Android and Swift for iOS, this dependency is a solid ground that is constantely in an improvement proccess for new native mobile development. No more looking for dependencies, adding permissions, configuring DI, finding your latest and greatest extensions -  this basic mobile temple application has eveything you need for a strong fresh new mobile project. 
  
  
  ## Android <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="40" height="40"/>
