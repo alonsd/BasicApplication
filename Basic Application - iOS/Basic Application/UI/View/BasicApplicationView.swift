@@ -1,22 +1,17 @@
-//
-//  CoinsView.swift
-//  Basic Application
-//
-//  Created by Alon Shlider on 11/07/2021.
-//
+
 
 import SwiftUI
 
-struct UsersView: View {
+struct BasicApplicationView: View {
     
-    @ObservedObject private var usersViewModel = UserViewModel()
+    @ObservedObject private var basicApplicationViewModel = BasicApplicationViewModel()
     
     var body: some View {
         VStack(alignment: .leading){
             
             let colors = [Color.blue, Color.green, Color.red]
                         
-            List(usersViewModel.users) { user in
+            List(basicApplicationViewModel.users) { user in
                 Text(user.phone)
                     .font(.headline)
                     .foregroundColor(Color.white)
@@ -35,7 +30,7 @@ struct UsersView: View {
                alignment: .topLeading)
         .background(Color.red)
         .onAppear{
-            usersViewModel.fetchUsers()
+            basicApplicationViewModel.fetchUsers()
         }
     }
     
@@ -43,6 +38,6 @@ struct UsersView: View {
 
 struct CoinsView_Previews: PreviewProvider {
     static var previews: some View {
-        UsersView()
+        BasicApplicationView()
     }
 }

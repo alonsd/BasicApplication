@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-class UserViewModel: ObservableObject {
+class BasicApplicationViewModel: ObservableObject {
     
-    private let networkService = NetworkService()
+    private let networkService = BasicApplicationNetworkService()
     
     @Published var users = UserResponse()
     
