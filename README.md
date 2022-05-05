@@ -4,8 +4,9 @@
 
 No more looking for dependencies, adding permissions, configuring DI -  this basic Android temple application has eveything you need for a fresh new mobile project. 
  
-<img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="50" height="50"/> ## Android - 
-- [x] Solid MVVM architecture.
+ 
+ ## Android <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="40" height="40"/>
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="25" height="25"/> Solid MVVM architecture.
 - [x] Network layer built with Retrofit + Coroutines + error handling wrapper with a demonstrated used API in the app.
 - [x] Local database using Room library implemented and ready to use.
 - [x] Service Locator using Koin is configured and used throughout the application.
