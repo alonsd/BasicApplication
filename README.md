@@ -2,7 +2,9 @@
 
 # BasicApplication - Native Mobile Application Architecture
 
-Devekipoed in **Kotlin** for Android and **Swift** for iOS, this dependency is a solid ground that is constantely in an improvement proccess for new native mobile development. No more looking for dependencies, adding permissions, configuring DI, finding your latest and greatest extensions -  this basic mobile temple application has eveything you need for a strong fresh new mobile project. 
+Devekipoed in **Kotlin** for Android and **Swift** for iOS, this dependency is a solid ground for new native mobile development. No more looking for dependencies, adding permissions, configuring DI, finding your latest and greatest extensions -  this basic mobile temple application has eveything you need for a strong fresh new mobile project. 
+
+Come and revisit once a while as this repository is being updated constantly with the latest and greatest evolution of the mobile tech industry :) 
  
  
  ## Android <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="40" height="40"/>
