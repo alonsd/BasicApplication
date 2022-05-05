@@ -15,6 +15,10 @@ No more looking for dependencies, adding permissions, configuring DI -  this bas
 - <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  SharedPreferences extension which makes saving small amounts of data extremely easy to use. 
 - <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Very commonly used dependencies such as Gson, Room, Glide and more are already pre-defined.
 
+
+## iOS <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="40" height="40"/>
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="20" height="20"/>   To be continued
+
 ### Prerequisites
 This project assumes you know about modern mobile applications architecture such as MVVM / MVI, common networking libraries such as Retrofit and Alamofire and concurrency methods such as Kotlin Coroutines / Swift Combine.
 
