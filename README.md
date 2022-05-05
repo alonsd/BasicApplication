@@ -2,7 +2,7 @@
 
 # BasicApplication - Native Mobile Application Architecture
 
-Devekipoed in Kotlin for Android and Swift for iOS, this dependency is a solid ground that is constantely in an improvement proccess for new native mobile development. No more looking for dependencies, adding permissions, configuring DI, finding your latest and greatest extensions -  this basic mobile temple application has eveything you need for a strong fresh new mobile project. 
+Devekipoed in **Kotlin** for Android and **Swift** for iOS, this dependency is a solid ground that is constantely in an improvement proccess for new native mobile development. No more looking for dependencies, adding permissions, configuring DI, finding your latest and greatest extensions -  this basic mobile temple application has eveything you need for a strong fresh new mobile project. 
  
  
  ## Android <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="40" height="40"/>
@@ -16,8 +16,8 @@ Devekipoed in Kotlin for Android and Swift for iOS, this dependency is a solid g
 - <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Very commonly used dependencies such as Gson, Room, Glide and more are already pre-defined.
 
 
-## iOS <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="40" height="40"/>
-- <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="20" height="20"/>   To be continued
+## iOS <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="60" height="60"/>
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="30" height="30"/>   To be continued
 
 ### Prerequisites
 This project assumes you know about modern mobile applications architecture such as MVVM / MVI, common networking libraries such as Retrofit and Alamofire and concurrency methods such as Kotlin Coroutines / Swift Combine.
