@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B505FC9A266253B300D368E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505FC99266253B300D368E8 /* Constants.swift */; };
 		B51C55842662E34D0010DB00 /* UnusedRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C55832662E34D0010DB00 /* UnusedRemoteDataSource.swift */; };
+		B52EEE7C2824194B00AECB8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B52EEE7B2824194B00AECB8A /* Alamofire */; };
+		B52EEE7F2824275600AECB8A /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B52EEE7E2824275600AECB8A /* Swinject */; };
 		B56D1653269A499D00693125 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1652269A499D00693125 /* NetworkService.swift */; };
-		B56D1655269A521400693125 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1654269A521400693125 /* Coin.swift */; };
-		B56D1657269A547200693125 /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1656269A547200693125 /* CoinViewModel.swift */; };
-		B56D1659269A55D300693125 /* CoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1658269A55D300693125 /* CoinsView.swift */; };
+		B56D1655269A521400693125 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1654269A521400693125 /* User.swift */; };
+		B56D1657269A547200693125 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1656269A547200693125 /* UserViewModel.swift */; };
+		B56D1659269A55D300693125 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1658269A55D300693125 /* UsersView.swift */; };
 		B5E5604C266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5E5604A266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld */; };
 		B5E5604E266C215800DFA999 /* PresistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5604D266C215800DFA999 /* PresistentController.swift */; };
 		EDBC4AA226334A5900D3EE9D /* BasicApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC4AA126334A5900D3EE9D /* BasicApplication.swift */; };
@@ -27,9 +29,9 @@
 		B55A568D26629454009FDF42 /* DeveloperConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DeveloperConfiguration.xcconfig; sourceTree = "<group>"; };
 		B55A568E26629475009FDF42 /* ProductionConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProductionConfiguration.xcconfig; sourceTree = "<group>"; };
 		B56D1652269A499D00693125 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		B56D1654269A521400693125 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		B56D1656269A547200693125 /* CoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModel.swift; sourceTree = "<group>"; };
-		B56D1658269A55D300693125 /* CoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsView.swift; sourceTree = "<group>"; };
+		B56D1654269A521400693125 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B56D1656269A547200693125 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		B56D1658269A55D300693125 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		B5E5604B266C20D800DFA999 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		B5E5604D266C215800DFA999 /* PresistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresistentController.swift; sourceTree = "<group>"; };
 		EDBC4A9E26334A5900D3EE9D /* Basic Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52EEE7C2824194B00AECB8A /* Alamofire in Frameworks */,
+				B52EEE7F2824275600AECB8A /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +75,7 @@
 		B505FC9D2662547200D368E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B56D1658269A55D300693125 /* CoinsView.swift */,
+				B56D1658269A55D300693125 /* UsersView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -80,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				EDBC4AB126334A7100D3EE9D /* Video.swift */,
-				B56D1654269A521400693125 /* Coin.swift */,
+				B56D1654269A521400693125 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,7 +128,7 @@
 			children = (
 				B51C55832662E34D0010DB00 /* UnusedRemoteDataSource.swift */,
 				B56D1652269A499D00693125 /* NetworkService.swift */,
-				B56D1656269A547200693125 /* CoinViewModel.swift */,
+				B56D1656269A547200693125 /* UserViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -185,6 +189,10 @@
 			dependencies = (
 			);
 			name = "Basic Application";
+			packageProductDependencies = (
+				B52EEE7B2824194B00AECB8A /* Alamofire */,
+				B52EEE7E2824275600AECB8A /* Swinject */,
+			);
 			productName = "SwiftUI-List-Starter";
 			productReference = EDBC4A9E26334A5900D3EE9D /* Basic Application.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +220,10 @@
 				Base,
 			);
 			mainGroup = EDBC4A9526334A5900D3EE9D;
+			packageReferences = (
+				B52EEE7A2824194B00AECB8A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B52EEE7D2824275600AECB8A /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = EDBC4A9F26334A5900D3EE9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,13 +251,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E5604E266C215800DFA999 /* PresistentController.swift in Sources */,
-				B56D1659269A55D300693125 /* CoinsView.swift in Sources */,
+				B56D1659269A55D300693125 /* UsersView.swift in Sources */,
 				B51C55842662E34D0010DB00 /* UnusedRemoteDataSource.swift in Sources */,
 				B5E5604C266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld in Sources */,
-				B56D1657269A547200693125 /* CoinViewModel.swift in Sources */,
+				B56D1657269A547200693125 /* UserViewModel.swift in Sources */,
 				EDBC4AB226334A7100D3EE9D /* Video.swift in Sources */,
 				EDBC4AA226334A5900D3EE9D /* BasicApplication.swift in Sources */,
-				B56D1655269A521400693125 /* Coin.swift in Sources */,
+				B56D1655269A521400693125 /* User.swift in Sources */,
 				B505FC9A266253B300D368E8 /* Constants.swift in Sources */,
 				B56D1653269A499D00693125 /* NetworkService.swift in Sources */,
 			);
@@ -530,6 +542,38 @@
 			defaultConfigurationName = Production;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B52EEE7A2824194B00AECB8A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		B52EEE7D2824275600AECB8A /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B52EEE7B2824194B00AECB8A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B52EEE7A2824194B00AECB8A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		B52EEE7E2824275600AECB8A /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B52EEE7D2824275600AECB8A /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B5E5604A266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld */ = {

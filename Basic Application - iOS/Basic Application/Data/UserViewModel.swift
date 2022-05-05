@@ -8,25 +8,24 @@
 import Foundation
 import Combine
 
-class CoinViewModel: ObservableObject {
+class UserViewModel: ObservableObject {
     
     private let networkService = NetworkService()
     
-//    @Published var coins = [Coin]()
-    @Published var coins = String()
+    @Published var users = UserResponse()
     
     var cancellable : AnyCancellable?
     
     init(){
-        fetchCoins()
+        fetchUsers()
     }
     
-    func fetchCoins() {
+    func fetchUsers() {
         print("bla bla")
-        cancellable = networkService.fetchCoinsAsString().sink(receiveCompletion: { _ in
+        cancellable = networkService.fetchUsers().sink(receiveCompletion: { _ in
             print("inside completion")
-        }, receiveValue: { coinsResult in
-            self.coins = coinsResult
+        }, receiveValue: { userResult in
+            self.users = userResult
         })
     }
 }

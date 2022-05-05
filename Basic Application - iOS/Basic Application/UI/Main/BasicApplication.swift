@@ -18,7 +18,7 @@ struct BasicApplication: App {
     
     var body: some Scene {
         WindowGroup {
-            CoinsView()
+            UsersView()
         }
 //        .onChange(of: scenePhase) { newScenePhase in
 //            switch newScenePhase {
