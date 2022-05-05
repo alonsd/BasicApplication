@@ -6,19 +6,19 @@ No more looking for dependencies, adding permissions, configuring DI -  this bas
  
  
  ## Android <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="40" height="40"/>
-- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="25" height="25"/> Solid MVVM architecture.
-- [x] Network layer built with Retrofit + Coroutines + error handling wrapper with a demonstrated used API in the app.
-- [x] Local database using Room library implemented and ready to use.
-- [x] Service Locator using Koin is configured and used throughout the application.
-- [x] Built for a Single-Activity application, Navigation Component is already predefined and a first fragment is already built onto it.
-- [x] Powerful generic utility class for ListAdapter to prevent creating a new DiffUtil.ItemCallback class each time you create a new list.
-- [x] SharedPreferences extension which makes saving small amounts of data extremely easy to use. 
-- [x] Very commonly used dependencies such as Gson, Room, Glide and more are already pre-defined.
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Solid MVVM architecture.
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Network layer built with Retrofit + Coroutines + error handling wrapper with a demonstrated used API in the app.
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Local database using Room library implemented and ready to use.
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Service Locator using Koin is configured and used throughout the application.
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Built for a Single-Activity application, Navigation Component is already predefined and a first fragment is already built onto it.
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Powerful generic utility class for ListAdapter to prevent creating a new DiffUtil.ItemCallback class each time you create a new list.
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  SharedPreferences extension which makes saving small amounts of data extremely easy to use. 
+- <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Very commonly used dependencies such as Gson, Room, Glide and more are already pre-defined.
 
 ### Prerequisites
-This project assumes you know how to work with MVVM architecture, Retrofit networking and Kotlin Coroutines.
+This project assumes you know about modern mobile applications architecture such as MVVM / MVI, common networking libraries such as Retrofit and Alamofire and concurrency methods such as Kotlin Coroutines / Swift Combine.
 
-If you do, this project can save you ALOT of time when creating a new Android project from scratch - just clone this project, change the package name, project name, generic variables to suit your naming needs and your ready to go. 
+This project can save you alot of time when creating a new Android / iOS project from scratch - clone this project, change the package name, project name, generic variables to suit your naming needs and your ready to go. It comes really handy when you need to rebuild the same project over and over again, like for a job interview phase where you get a task for home which looks pretty much the same for most companies. 
 
 ### Installing
 
