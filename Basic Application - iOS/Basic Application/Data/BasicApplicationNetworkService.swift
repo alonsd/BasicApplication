@@ -17,9 +17,7 @@ class BasicApplicationNetworkService: ObservableObject {
         components.path = "/users"
         return components
     }
-    
-    var cancelablle : AnyCancellable?
-    
+        
     func fetchUsersAsString() -> AnyPublisher<String, Error> {
         return URLSession.shared.dataTaskPublisher(for: urlComponents.url!)
             .tryMap { dataTaskPublisher -> String in
