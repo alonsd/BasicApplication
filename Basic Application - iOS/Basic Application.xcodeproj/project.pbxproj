@@ -17,6 +17,7 @@
 		B56D1655269A521400693125 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1654269A521400693125 /* User.swift */; };
 		B56D1657269A547200693125 /* BasicApplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1656269A547200693125 /* BasicApplicationViewModel.swift */; };
 		B56D1659269A55D300693125 /* BasicApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1658269A55D300693125 /* BasicApplicationView.swift */; };
+		B59656242826AD9B00AB8B82 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B59656232826AD9B00AB8B82 /* FirebaseFirestore */; };
 		B5E5604C266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5E5604A266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld */; };
 		B5E5604E266C215800DFA999 /* PresistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5604D266C215800DFA999 /* PresistentController.swift */; };
 		EDBC4AA226334A5900D3EE9D /* BasicApplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC4AA126334A5900D3EE9D /* BasicApplicationApp.swift */; };
@@ -52,6 +53,7 @@
 				B52EEE7C2824194B00AECB8A /* Alamofire in Frameworks */,
 				B52EEE7F2824275600AECB8A /* Swinject in Frameworks */,
 				B519D3372824659700608201 /* Moya in Frameworks */,
+				B59656242826AD9B00AB8B82 /* FirebaseFirestore in Frameworks */,
 				B519D3352824659700608201 /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +200,7 @@
 				B52EEE7E2824275600AECB8A /* Swinject */,
 				B519D3342824659700608201 /* CombineMoya */,
 				B519D3362824659700608201 /* Moya */,
+				B59656232826AD9B00AB8B82 /* FirebaseFirestore */,
 			);
 			productName = "SwiftUI-List-Starter";
 			productReference = EDBC4A9E26334A5900D3EE9D /* Basic Application.app */;
@@ -230,6 +233,7 @@
 				B52EEE7A2824194B00AECB8A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B52EEE7D2824275600AECB8A /* XCRemoteSwiftPackageReference "Swinject" */,
 				B519D3332824659700608201 /* XCRemoteSwiftPackageReference "Moya" */,
+				B59656222826AD9B00AB8B82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = EDBC4A9F26334A5900D3EE9D /* Products */;
 			projectDirPath = "";
@@ -575,6 +579,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		B59656222826AD9B00AB8B82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -597,6 +609,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B52EEE7D2824275600AECB8A /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		B59656232826AD9B00AB8B82 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59656222826AD9B00AB8B82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 
