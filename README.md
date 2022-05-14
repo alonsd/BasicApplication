@@ -8,7 +8,7 @@ Come and revisit once a while as this repository is being updated constantly wit
  
  
  ## Android <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="40" height="40"/>
-<img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Solid MVVM architecture.
+<img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Solid MVI architecture.
 
 <img src="https://github.com/alonsd/BasicApplication/blob/main/Android%20Logo.png" width="20" height="20"/>  Network layer built with Retrofit + Coroutines + error handling wrapper with a demonstrated used API in the app.
 
@@ -26,7 +26,10 @@ Come and revisit once a while as this repository is being updated constantly wit
 
 
 ## iOS <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="60" height="60"/>
-<img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="30" height="30"/>   To be continued
+<img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="30" height="30"/>   Solid MVVM architecture 
+
+## iOS <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="60" height="60"/>
+<img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="30" height="30"/>   Dependency Injection container using Swinject 
 
 ### Prerequisites
 This project assumes you know about modern mobile applications architecture such as MVVM / MVI, common networking libraries such as Retrofit and Alamofire and concurrency methods such as Kotlin Coroutines / Swift Combine.
