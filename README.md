@@ -28,7 +28,6 @@ Come and revisit once a while as this repository is being updated constantly wit
 ## iOS <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="60" height="60"/>
 <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="30" height="30"/>   Solid MVVM architecture 
 
-## iOS <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="60" height="60"/>
 <img src="https://github.com/alonsd/BasicApplication/blob/main/Apple%20Logo.png" width="30" height="30"/>   Dependency Injection container using Swinject 
 
 ### Prerequisites
