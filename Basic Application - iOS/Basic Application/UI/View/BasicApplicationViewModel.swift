@@ -5,13 +5,14 @@ import Combine
 
 class BasicApplicationViewModel: ObservableObject {
     
-    private let networkService = BasicApplicationNetworkService()
-    
+    let networkService : BasicApplicationNetworkService
+        
     @Published var users = UserResponse()
     
     var cancellable : AnyCancellable?
     
-    init(){
+    init(networkService : BasicApplicationNetworkService){
+        self.networkService = networkService
         fetchUsers()
     }
     

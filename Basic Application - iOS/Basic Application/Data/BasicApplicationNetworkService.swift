@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class BasicApplicationNetworkService: ObservableObject {
+class BasicApplicationNetworkService {
     
     private var urlComponents : URLComponents {
         var components = URLComponents()

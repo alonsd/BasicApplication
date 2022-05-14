@@ -3,16 +3,21 @@
 import SwiftUI
 import CombineMoya
 
+
 struct BasicApplicationView: View {
     
-    @ObservedObject private var basicApplicationViewModel = BasicApplicationViewModel()
+    @ObservedObject var viewmodel : BasicApplicationViewModel
+    
+    init(viewmodel : BasicApplicationViewModel) {
+        self.viewmodel = viewmodel
+    }
     
     var body: some View {
         VStack(alignment: .leading){
             
             let colors = [Color.blue, Color.green, Color.red]
                         
-            List(basicApplicationViewModel.users) { user in
+            List(viewmodel.users) { user in
                 Text(user.phone)
                     .font(.headline)
                     .foregroundColor(Color.white)
@@ -31,14 +36,14 @@ struct BasicApplicationView: View {
                alignment: .topLeading)
         .background(Color.red)
         .onAppear{
-            basicApplicationViewModel.fetchUsers()
+            viewmodel.fetchUsers()
         }
     }
     
 }
 
-struct CoinsView_Previews: PreviewProvider {
-    static var previews: some View {
-        BasicApplicationView()
-    }
-}
+//struct CoinsView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        BasicApplicationView()
+//    }
+//}
