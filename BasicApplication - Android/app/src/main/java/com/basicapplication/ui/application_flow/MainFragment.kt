@@ -1,7 +1,6 @@
 package com.basicapplication.ui.application_flow
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,18 +25,14 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        init()
-        handleData()
+        observeActions()
     }
 
-
-    private fun init() = mainViewModel.getBasicApplicationDataTypeOne()
-
-    private fun handleData() {
+    private fun observeActions() {
 
         mainViewModel.actions.observe(viewLifecycleOwner) { action ->
             when (action) {
-                is MainViewModel.MainViewModelActions.ShowDataTypeOne -> {
+                is MainViewModel.MainViewModelActions.ShowData -> {
                     Toast.makeText(requireContext(), action.modelsList.toString(), Toast.LENGTH_LONG).show()
                 }
                 is MainViewModel.MainViewModelActions.ShowGeneralError -> {
