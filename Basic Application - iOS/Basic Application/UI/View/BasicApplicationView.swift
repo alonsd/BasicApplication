@@ -6,11 +6,9 @@ import CombineMoya
 
 struct BasicApplicationView: View {
     
+    @Inject
     @ObservedObject var viewmodel : BasicApplicationViewModel
     
-    init(viewmodel : BasicApplicationViewModel) {
-        self.viewmodel = viewmodel
-    }
     
     var body: some View {
         VStack(alignment: .leading){

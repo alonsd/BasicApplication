@@ -26,7 +26,7 @@ fun StackModifiersTest() {
 fun StackedModifiers(sizeCap : Int = 3) {
 
     var sizeState by remember { mutableStateOf(9.dp) }
-    var currentSizeCounter by remember { mutableStateOf(0)}
+    var currentSizeCounter by remember() { mutableStateOf(0)}
     val size by animateDpAsState(
         targetValue = sizeState,
         spring(Spring.DampingRatioHighBouncy)

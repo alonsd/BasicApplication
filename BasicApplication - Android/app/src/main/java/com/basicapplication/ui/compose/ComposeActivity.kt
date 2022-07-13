@@ -12,6 +12,5 @@ class ComposeActivity : ComponentActivity() {
         setContent {
             StackedModifiers()
         }
-
     }
 }

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B505FC9A266253B300D368E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505FC99266253B300D368E8 /* Constants.swift */; };
 		B50793C4282FEE2E0099129C /* DiContainerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50793C3282FEE2D0099129C /* DiContainerWrapper.swift */; };
 		B519D3352824659700608201 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B519D3342824659700608201 /* CombineMoya */; };
 		B519D3372824659700608201 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B519D3362824659700608201 /* Moya */; };
 		B51C55842662E34D0010DB00 /* UnusedRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C55832662E34D0010DB00 /* UnusedRemoteDataSource.swift */; };
 		B52EEE7C2824194B00AECB8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B52EEE7B2824194B00AECB8A /* Alamofire */; };
 		B52EEE7F2824275600AECB8A /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B52EEE7E2824275600AECB8A /* Swinject */; };
+		B566E29628304C2500F48BBE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B566E29528304C2500F48BBE /* Extensions.swift */; };
 		B56D1653269A499D00693125 /* BasicApplicationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1652269A499D00693125 /* BasicApplicationNetworkService.swift */; };
 		B56D1655269A521400693125 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1654269A521400693125 /* User.swift */; };
 		B56D1657269A547200693125 /* BasicApplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1656269A547200693125 /* BasicApplicationViewModel.swift */; };
@@ -28,11 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B505FC99266253B300D368E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B50793C3282FEE2D0099129C /* DiContainerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainerWrapper.swift; sourceTree = "<group>"; };
 		B51C55832662E34D0010DB00 /* UnusedRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnusedRemoteDataSource.swift; sourceTree = "<group>"; };
-		B55A568D26629454009FDF42 /* DeveloperConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DeveloperConfiguration.xcconfig; sourceTree = "<group>"; };
-		B55A568E26629475009FDF42 /* ProductionConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProductionConfiguration.xcconfig; sourceTree = "<group>"; };
+		B566E29528304C2500F48BBE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B56D1652269A499D00693125 /* BasicApplicationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicApplicationNetworkService.swift; sourceTree = "<group>"; };
 		B56D1654269A521400693125 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B56D1656269A547200693125 /* BasicApplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicApplicationViewModel.swift; sourceTree = "<group>"; };
@@ -101,8 +99,7 @@
 		B505FC9F266254AD00D368E8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B55A568F266298DF009FDF42 /* BuildConfigurations */,
-				B505FC99266253B300D368E8 /* Constants.swift */,
+				B566E29528304C2500F48BBE /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -140,15 +137,6 @@
 				B56D1652269A499D00693125 /* BasicApplicationNetworkService.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		B55A568F266298DF009FDF42 /* BuildConfigurations */ = {
-			isa = PBXGroup;
-			children = (
-				B55A568D26629454009FDF42 /* DeveloperConfiguration.xcconfig */,
-				B55A568E26629475009FDF42 /* ProductionConfiguration.xcconfig */,
-			);
-			path = BuildConfigurations;
 			sourceTree = "<group>";
 		};
 		EDBC4A9526334A5900D3EE9D = {
@@ -273,7 +261,7 @@
 				EDBC4AB226334A7100D3EE9D /* Video.swift in Sources */,
 				EDBC4AA226334A5900D3EE9D /* BasicApplicationApp.swift in Sources */,
 				B56D1655269A521400693125 /* User.swift in Sources */,
-				B505FC9A266253B300D368E8 /* Constants.swift in Sources */,
+				B566E29628304C2500F48BBE /* Extensions.swift in Sources */,
 				B56D1653269A499D00693125 /* BasicApplicationNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +271,6 @@
 /* Begin XCBuildConfiguration section */
 		B5658D6B281D6EF0003B4491 /* Stage */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55A568D26629454009FDF42 /* DeveloperConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -346,7 +333,6 @@
 		};
 		B5658D6C281D6EF0003B4491 /* Stage */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55A568D26629454009FDF42 /* DeveloperConfiguration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -369,7 +355,6 @@
 		};
 		EDBC4AAB26334A5A00D3EE9D /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55A568D26629454009FDF42 /* DeveloperConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -432,7 +417,6 @@
 		};
 		EDBC4AAC26334A5A00D3EE9D /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55A568E26629475009FDF42 /* ProductionConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -489,7 +473,6 @@
 		};
 		EDBC4AAE26334A5A00D3EE9D /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55A568D26629454009FDF42 /* DeveloperConfiguration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -512,7 +495,6 @@
 		};
 		EDBC4AAF26334A5A00D3EE9D /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55A568E26629475009FDF42 /* ProductionConfiguration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
