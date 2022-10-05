@@ -5,10 +5,10 @@ import Combine
 
 class BasicApplicationViewModel: ObservableObject {
     
-    @Inject
-    var networkService : BasicApplicationNetworkService
+//    @Inject
+    var networkService : BasicApplicationNetworkService = BasicApplicationNetworkService()
         
-    @Published var users = UserResponse()
+    @Published var uiState = UiState()
     
     var cancellable : AnyCancellable?
     
@@ -21,7 +21,28 @@ class BasicApplicationViewModel: ObservableObject {
         cancellable = networkService.fetchUsers().sink(receiveCompletion: { _ in
             print("inside completion")
         }, receiveValue: { userResult in
-            self.users = userResult
+            self.uiState.resetValues(state: UiState.State.data, userResponse: userResult)
         })
+    }
+    
+    struct UiState{
+        
+        var state : State = State.initial
+        var userResponse = UserResponse()
+        var errorMessage = ""
+        
+        
+        enum State {
+            case data
+            case error
+            case initial
+        }
+        
+        mutating func resetValues(
+            state: State = State.initial,
+            userResponse: UserResponse = UserResponse(),
+            errorMessage : String = "") {
+            self = UiState(state: state, userResponse: userResponse,errorMessage: errorMessage)
+        }
     }
 }

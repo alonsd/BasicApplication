@@ -6,39 +6,23 @@ import CombineMoya
 
 struct BasicApplicationView: View {
     
-    @Inject
-    @ObservedObject var viewmodel : BasicApplicationViewModel
-    
+//    @Inject
+    @ObservedObject var viewmodel : BasicApplicationViewModel = BasicApplicationViewModel()
     
     var body: some View {
-        VStack(alignment: .leading){
-            
-            let colors = [Color.blue, Color.green, Color.red]
-                        
-            List(viewmodel.users) { user in
-                Text(user.phone)
-                    .font(.headline)
-                    .foregroundColor(Color.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(colors.randomElement())
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
-                    .padding()
-            }
-        }
-        .frame(minWidth: 0,
-               maxWidth: .infinity,
-               minHeight: 0,
-               maxHeight: .infinity,
-               alignment: .topLeading)
-        .background(Color.red)
-        .onAppear{
-            viewmodel.fetchUsers()
+        
+        switch(viewmodel.uiState.state) {
+            case.initial: EmptyView()
+                
+            case.data:
+                ViewDataState(userResponse: viewmodel.uiState.userResponse)
+                
+            case.error: EmptyView()
         }
     }
-    
 }
+
+
 
 //struct CoinsView_Previews: PreviewProvider {
 //    static var previews: some View {
