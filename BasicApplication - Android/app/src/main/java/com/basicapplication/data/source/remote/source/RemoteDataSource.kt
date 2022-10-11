@@ -4,7 +4,7 @@ import com.basicapplication.data.source.remote.api.NetworkApi
 
 class RemoteDataSource(private val networkApi: NetworkApi) {
 
-    suspend fun getDataFromPath() = networkApi.getDataFromPath()
+    suspend fun getDataFromApi() = networkApi.getDataFromApi()
 
 
 }

@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "buildContainer():Extensions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "container.resolve(BasicApplicationViewModelself)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #3 in buildContainer():Extensions.swift">
          <PersistentStrings>
             <PersistentString

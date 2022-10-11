@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+
 class BasicApplicationNetworkService {
     
     private var urlComponents : URLComponents {
@@ -37,4 +38,7 @@ class BasicApplicationNetworkService {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
+    
+    
+
 }

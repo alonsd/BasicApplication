@@ -32,7 +32,7 @@ func buildContainer() -> Container {
     container.register(BasicApplicationNetworkService.self) { _ in
         return BasicApplicationNetworkService()
     }.inObjectScope(.container)
-    
+
     container.register(BasicApplicationViewModel.self) { resolver in
         return BasicApplicationViewModel()
     }.inObjectScope(.container)

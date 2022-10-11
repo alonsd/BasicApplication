@@ -171,12 +171,6 @@ dependencies {
     implementation 'org.koin:koin-core:2.2.2'
     implementation "org.koin:koin-android-scope:2.2.2"
     implementation "org.koin:koin-android-viewmodel:2.2.2"
-//    implementation "io.insert-koin:koin-androidx-compose:3.1.5"
-
-    //Timber
-    implementation 'com.jakewharton.timber:timber:5.0.1'
-
-
 
 }
 

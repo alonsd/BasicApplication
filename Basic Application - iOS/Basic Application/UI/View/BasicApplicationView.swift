@@ -24,8 +24,8 @@ struct BasicApplicationView: View {
 
 
 
-//struct CoinsView_Previews: PreviewProvider {
-//    static var previews: some View {
-////        BasicApplicationView()
-//    }
-//}
+struct CoinsView_Previews: PreviewProvider {
+    static var previews: some View {
+        BasicApplicationView()
+    }
+}

@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.application_flow.MainFragment">
+        tools:context=".ui.application_flow.DashboardFragment">
 
         <TextView
             android:layout_width="wrap_content"

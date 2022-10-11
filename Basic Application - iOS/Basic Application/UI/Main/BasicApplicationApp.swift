@@ -16,7 +16,7 @@ struct BasicApplicationApp: App {
 
         WindowGroup {
 //            DiContainerWrapper.shared.sharedContainer.resolve(BasicApplicationView.self)!
-            statingView
+            BasicApplicationView()
         }
     }
 }

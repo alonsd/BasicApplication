@@ -1,10 +1,10 @@
 package com.basicapplication.service_locator
 
-import com.basicapplication.data.repository.MainRepository
+import com.basicapplication.data.repository.Repository
 import org.koin.dsl.module
 
 
 val repositoryModule = module {
 
-    single { MainRepository(get(), get()) }
+    single { Repository(get(), get()) }
 }

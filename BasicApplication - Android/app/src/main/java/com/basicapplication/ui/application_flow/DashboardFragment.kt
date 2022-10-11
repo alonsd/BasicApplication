@@ -8,14 +8,15 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.basicapplication.R
-import com.basicapplication.data.viewmodel.MainViewModel
+import com.basicapplication.data.viewmodel.DashboardViewModel
 import com.basicapplication.databinding.FragmentMainBinding
+import com.basicapplication.utils.extensions.launchAndRepeatWithViewLifecycle
 import org.koin.android.ext.android.get
 
-class MainFragment : Fragment() {
+class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
-    private val mainViewModel = get<MainViewModel>()
+    private val dashboardViewModel = get<DashboardViewModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
@@ -25,20 +26,20 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        observeActions()
+        observeUiState()
     }
 
-    private fun observeActions() {
+    private fun observeUiState() = launchAndRepeatWithViewLifecycle {
 
-        mainViewModel.actions.observe(viewLifecycleOwner) { action ->
-            when (action) {
-                is MainViewModel.MainViewModelActions.ShowData -> {
-                    Toast.makeText(requireContext(), action.modelsList.toString(), Toast.LENGTH_LONG).show()
+        dashboardViewModel.uiState.collect { uiState ->
+            when (uiState.state) {
+                DashboardViewModel.UiState.State.Initial -> Unit
+                DashboardViewModel.UiState.State.Data -> {
+                    Toast.makeText(requireContext(), uiState.modelsList.toString(), Toast.LENGTH_LONG).show()
                 }
-                is MainViewModel.MainViewModelActions.ShowGeneralError -> {
-                    Toast.makeText(requireContext(), action.errorMessage, Toast.LENGTH_LONG).show()
+                DashboardViewModel.UiState.State.Error -> {
+                    Toast.makeText(requireContext(), uiState.errorMessage, Toast.LENGTH_LONG).show()
                 }
-                else -> return@observe
             }
         }
     }

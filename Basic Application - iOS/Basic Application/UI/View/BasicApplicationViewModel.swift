@@ -17,10 +17,7 @@ class BasicApplicationViewModel: ObservableObject {
     }
     
     func fetchUsers() {
-        print("bla bla")
-        cancellable = networkService.fetchUsers().sink(receiveCompletion: { _ in
-            print("inside completion")
-        }, receiveValue: { userResult in
+        cancellable = networkService.fetchUsers().sink(receiveCompletion: { _ in }, receiveValue: { userResult in
             self.uiState.resetValues(state: UiState.State.data, userResponse: userResult)
         })
     }
