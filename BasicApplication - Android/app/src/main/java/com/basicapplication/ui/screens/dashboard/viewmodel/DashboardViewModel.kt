@@ -1,4 +1,4 @@
-package com.basicapplication.data.viewmodel
+package com.basicapplication.ui.screens.dashboard.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

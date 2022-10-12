@@ -1,6 +1,5 @@
 package com.basicapplication.utils.extensions
 
-import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -17,16 +16,6 @@ inline fun Fragment.launchAndRepeatWithViewLifecycle(
             block()
         }
     }
-}
-
-fun View.setVisiblyAsGone(){
-    visibility = View.GONE
-}
-fun View.setVisiblyAsVisible(){
-    visibility = View.VISIBLE
-}
-fun View.setVisiblyAsInvisible(){
-    visibility = View.INVISIBLE
 }
 
 

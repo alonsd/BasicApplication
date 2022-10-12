@@ -1,4 +1,4 @@
-package com.basicapplication.ui.application_flow
+package com.basicapplication.ui.screens.dashboard.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,18 +8,21 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.basicapplication.R
-import com.basicapplication.data.viewmodel.DashboardViewModel
-import com.basicapplication.databinding.FragmentMainBinding
+import com.basicapplication.databinding.FragmentDashboardBinding
+import com.basicapplication.ui.screens.dashboard.viewmodel.DashboardViewModel
 import com.basicapplication.utils.extensions.launchAndRepeatWithViewLifecycle
 import org.koin.android.ext.android.get
 
 class DashboardFragment : Fragment() {
 
-    private lateinit var binding: FragmentMainBinding
+    //UI
+    private lateinit var binding: FragmentDashboardBinding
+
+    //Dependency Injection
     private val dashboardViewModel = get<DashboardViewModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
+        binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
     }
 
