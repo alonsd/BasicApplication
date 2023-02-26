@@ -1,13 +1,14 @@
 
 
 import SwiftUI
-import CombineMoya
+import Combine
 
 
 struct BasicApplicationView: View {
     
-//    @Inject
-    @ObservedObject var viewmodel : BasicApplicationViewModel = BasicApplicationViewModel()
+    
+    @Inject
+    @ObservedObject var viewmodel : BasicApplicationViewModel
     
     var body: some View {
         

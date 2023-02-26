@@ -31,16 +31,13 @@ func buildContainer() -> Container {
     let container = Container()
     container.register(BasicApplicationNetworkService.self) { _ in
         return BasicApplicationNetworkService()
-    }.inObjectScope(.container)
-
+    }
     container.register(BasicApplicationViewModel.self) { resolver in
         return BasicApplicationViewModel()
-    }.inObjectScope(.container)
-    
+    }
     container.register(BasicApplicationView.self) { resolver in
         return BasicApplicationView()
-    }.inObjectScope(.container)
-    
+    }
     return container
     
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50793C4282FEE2E0099129C /* DiContainerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50793C3282FEE2D0099129C /* DiContainerWrapper.swift */; };
 		B519D3352824659700608201 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B519D3342824659700608201 /* CombineMoya */; };
 		B519D3372824659700608201 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B519D3362824659700608201 /* Moya */; };
 		B52EEE7C2824194B00AECB8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B52EEE7B2824194B00AECB8A /* Alamofire */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B50793C3282FEE2D0099129C /* DiContainerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainerWrapper.swift; sourceTree = "<group>"; };
 		B533DC3A28EE275100C162BF /* ViewDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDataState.swift; sourceTree = "<group>"; };
 		B566E29528304C2500F48BBE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B56D1652269A499D00693125 /* BasicApplicationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicApplicationNetworkService.swift; sourceTree = "<group>"; };
@@ -97,14 +95,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B505FC9F266254AD00D368E8 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B566E29528304C2500F48BBE /* Extensions.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		B505FCA0266254D200D368E8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +116,7 @@
 		B5313E0A2664317E00FA0644 /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
-				B50793C3282FEE2D0099129C /* DiContainerWrapper.swift */,
+				B566E29528304C2500F48BBE /* Extensions.swift */,
 			);
 			path = "Dependency Injection";
 			sourceTree = "<group>";
@@ -162,7 +152,6 @@
 				B5313E092664317300FA0644 /* Database */,
 				B55A568C26629359009FDF42 /* Data */,
 				B505FCA0266254D200D368E8 /* Assets */,
-				B505FC9F266254AD00D368E8 /* Utils */,
 				B505FC9E266254A600D368E8 /* Model */,
 				B505FC9B2662544700D368E8 /* UI */,
 				EDBC4AAA26334A5A00D3EE9D /* Info.plist */,
@@ -255,7 +244,6 @@
 				B5E5604E266C215800DFA999 /* PresistentController.swift in Sources */,
 				B56D1659269A55D300693125 /* BasicApplicationView.swift in Sources */,
 				B533DC3B28EE275100C162BF /* ViewDataState.swift in Sources */,
-				B50793C4282FEE2E0099129C /* DiContainerWrapper.swift in Sources */,
 				B5E5604C266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld in Sources */,
 				B56D1657269A547200693125 /* BasicApplicationViewModel.swift in Sources */,
 				EDBC4AB226334A7100D3EE9D /* Video.swift in Sources */,

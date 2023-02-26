@@ -5,8 +5,9 @@ import Combine
 
 class BasicApplicationViewModel: ObservableObject {
     
-//    @Inject
-    var networkService : BasicApplicationNetworkService = BasicApplicationNetworkService()
+    
+    @Inject
+    var networkService : BasicApplicationNetworkService
         
     @Published var uiState = UiState()
     
