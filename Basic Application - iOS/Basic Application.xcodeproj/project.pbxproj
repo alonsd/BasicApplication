@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B510065A29AF6B05000EC4F5 /* ManualDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510065929AF6B05000EC4F5 /* ManualDI.swift */; };
 		B519D3352824659700608201 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B519D3342824659700608201 /* CombineMoya */; };
 		B519D3372824659700608201 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B519D3362824659700608201 /* Moya */; };
 		B52EEE7C2824194B00AECB8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B52EEE7B2824194B00AECB8A /* Alamofire */; };
 		B52EEE7F2824275600AECB8A /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B52EEE7E2824275600AECB8A /* Swinject */; };
 		B533DC3B28EE275100C162BF /* ViewDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533DC3A28EE275100C162BF /* ViewDataState.swift */; };
-		B566E29628304C2500F48BBE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B566E29528304C2500F48BBE /* Extensions.swift */; };
+		B541544029B91C220031C433 /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541543F29B91C220031C433 /* DependencyFactory.swift */; };
+		B566E29628304C2500F48BBE /* Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B566E29528304C2500F48BBE /* Swinject.swift */; };
 		B56D1653269A499D00693125 /* BasicApplicationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1652269A499D00693125 /* BasicApplicationNetworkService.swift */; };
 		B56D1655269A521400693125 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1654269A521400693125 /* User.swift */; };
 		B56D1657269A547200693125 /* BasicApplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D1656269A547200693125 /* BasicApplicationViewModel.swift */; };
@@ -27,8 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B510065929AF6B05000EC4F5 /* ManualDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualDI.swift; sourceTree = "<group>"; };
 		B533DC3A28EE275100C162BF /* ViewDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDataState.swift; sourceTree = "<group>"; };
-		B566E29528304C2500F48BBE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B541543F29B91C220031C433 /* DependencyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
+		B566E29528304C2500F48BBE /* Swinject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swinject.swift; sourceTree = "<group>"; };
 		B56D1652269A499D00693125 /* BasicApplicationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicApplicationNetworkService.swift; sourceTree = "<group>"; };
 		B56D1654269A521400693125 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B56D1656269A547200693125 /* BasicApplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicApplicationViewModel.swift; sourceTree = "<group>"; };
@@ -116,7 +120,9 @@
 		B5313E0A2664317E00FA0644 /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
-				B566E29528304C2500F48BBE /* Extensions.swift */,
+				B541543F29B91C220031C433 /* DependencyFactory.swift */,
+				B566E29528304C2500F48BBE /* Swinject.swift */,
+				B510065929AF6B05000EC4F5 /* ManualDI.swift */,
 			);
 			path = "Dependency Injection";
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E5604E266C215800DFA999 /* PresistentController.swift in Sources */,
+				B541544029B91C220031C433 /* DependencyFactory.swift in Sources */,
 				B56D1659269A55D300693125 /* BasicApplicationView.swift in Sources */,
 				B533DC3B28EE275100C162BF /* ViewDataState.swift in Sources */,
 				B5E5604C266C20D800DFA999 /* CoreDataDatabase.xcdatamodeld in Sources */,
@@ -249,7 +256,8 @@
 				EDBC4AB226334A7100D3EE9D /* Video.swift in Sources */,
 				EDBC4AA226334A5900D3EE9D /* BasicApplicationApp.swift in Sources */,
 				B56D1655269A521400693125 /* User.swift in Sources */,
-				B566E29628304C2500F48BBE /* Extensions.swift in Sources */,
+				B566E29628304C2500F48BBE /* Swinject.swift in Sources */,
+				B510065A29AF6B05000EC4F5 /* ManualDI.swift in Sources */,
 				B56D1653269A499D00693125 /* BasicApplicationNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

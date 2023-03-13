@@ -6,16 +6,13 @@ import Swinject
 @main
 struct BasicApplicationApp: App {
     
-    let resolver = Resolver()
-    
-    @Inject
+    @InjectManual
     var statingView : BasicApplicationView
     
     var body: some Scene {
 
         WindowGroup {
-
-            BasicApplicationView()
+            statingView
         }
     }
 }

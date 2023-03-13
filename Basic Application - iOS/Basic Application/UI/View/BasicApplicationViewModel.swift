@@ -5,17 +5,17 @@ import Combine
 
 class BasicApplicationViewModel: ObservableObject {
     
-    
-    @Inject
     var networkService : BasicApplicationNetworkService
+    
+    init(networkService : BasicApplicationNetworkService){
+        self.networkService = networkService
+        fetchUsers()
+    }
+    
         
     @Published var uiState = UiState()
     
     var cancellable : AnyCancellable?
-    
-    init(){
-        fetchUsers()
-    }
     
     func fetchUsers() {
         cancellable = networkService.fetchUsers().sink(receiveCompletion: { _ in }, receiveValue: { userResult in

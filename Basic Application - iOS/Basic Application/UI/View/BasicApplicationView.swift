@@ -6,9 +6,12 @@ import Combine
 
 struct BasicApplicationView: View {
     
-    
-    @Inject
     @ObservedObject var viewmodel : BasicApplicationViewModel
+    
+    init(viewmodel : BasicApplicationViewModel){
+        self.viewmodel = viewmodel
+    }
+    
     
     var body: some View {
         
@@ -20,13 +23,5 @@ struct BasicApplicationView: View {
                 
             case.error: EmptyView()
         }
-    }
-}
-
-
-
-struct CoinsView_Previews: PreviewProvider {
-    static var previews: some View {
-        BasicApplicationView()
     }
 }
